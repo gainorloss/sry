@@ -1,0 +1,25 @@
+## Dynamic configuration
+http:
+  routers:
+    pebs:
+      rule: "path(`/`)"
+      service: pebs
+    zy:
+      rule: "pathprefix(`/zy`)"
+      service: zy
+    zy-1:
+      rule: "pathprefix(`/zy-1`)"
+      service: zy-1
+  services:
+    pebs:
+      loadBalancer:
+        servers:
+        - url: "http://8.142.157.191:6006/"
+    zy:
+      loadBalancer:
+        servers:
+        - url: "http://8.142.157.191:6009/"
+    zy-1:
+      loadBalancer:
+        servers:
+        - url: "http://8.142.157.191:6009/"

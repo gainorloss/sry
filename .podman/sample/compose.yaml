@@ -1,0 +1,39 @@
+x-common: &common
+  env_file: ./.env
+  restart: always
+  networks: 
+    - sample
+  
+
+version: '3'
+services:
+  sample.api-dev:
+    image: sample.api:2023.08.26.3
+    ports:
+      - 7001:80
+    environment: &sample-api-env
+      - ASPNETCORE_ENVIRONMENT=Production
+    deploy:
+      replicas: 1
+    <<: *common
+  sample.api:
+    image: sample.api:2023.08.26.3
+    environment: *sample-api-env
+    deploy:
+      replicas: 3
+      update_config:
+        order: start-first
+    <<: *common
+  iaas-admin-ts:
+    image: iaas-admin-ts:2023.08.27.4
+    ports:
+      - 8080:80
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    environment:
+      - NODE_ENV=production
+    <<: *common
+networks:
+  sample:
+   driver: bridge
