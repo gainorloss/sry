@@ -8,7 +8,7 @@ x-common: &common
 version: '3'
 services:
   sample.api-dev:
-    image: sample.api:2023.08.26.3
+    image: sample.api:2023.09.02.1
     ports:
       - 7001:80
     environment: &sample-api-env
