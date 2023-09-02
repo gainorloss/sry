@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="fluentvalidation" Version="11.6.0" />
+		<PackageReference Include="fluentvalidation.dependencyinjectionextensions" Version="11.6.0" />
+		<PackageReference Include="microsoft.extensions.dependencyinjection" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="7.0.0" />
+		<PackageReference Include="communitytoolkit.mvvm" Version="8.2.1" />
+		<PackageReference Include="autoupdater.net.official" Version="1.8.3" />
+	</ItemGroup>
+</Project>

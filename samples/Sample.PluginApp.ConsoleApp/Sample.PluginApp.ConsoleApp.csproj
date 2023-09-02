@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Version>1.0.0.0</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="castle.core" Version="5.1.1" />
+		<PackageReference Include="communitytoolkit.common" Version="8.2.1" />
+		<PackageReference Include="communitytoolkit.diagnostics" Version="8.2.1" />
+		<PackageReference Include="memorypack" Version="1.9.16" />
+		<PackageReference Include="microsoft.extensions.dependencyinjection" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="7.0.0" />
+		<PackageReference Include="microsoft.extensions.http" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="PipesSample\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	  <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\GaloS.Wpf.Core\GaloS.Wpf.Core.csproj" />
+	</ItemGroup>
+
+</Project>

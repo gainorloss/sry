@@ -1,0 +1,26 @@
+[
+  {
+    "Title": "主页",
+    "Icon": "Home",
+    "Url": "Sample.WpfDevelopers.LOL;HomePage",
+    "Color": "Red"
+  },
+  {
+    "Title": "设置",
+    "Icon": "Cog",
+    "Url": "",
+    "Color": "Red"
+  },
+  {
+    "Title": "通知",
+    "Icon": "CommentDots",
+    "Url": "",
+    "Color": "Red"
+  },
+  {
+    "Title": "帮助",
+    "Icon": "CircleInfo",
+    "Url": "",
+    "Color": "Red"
+  }
+]

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  sample.api:
+    image: sample.api:2023.09.02.1  
+    build:
+        context: .
+        dockerfile: ./Dockerfile

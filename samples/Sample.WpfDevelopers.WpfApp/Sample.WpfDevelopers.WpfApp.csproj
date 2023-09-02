@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="favicon.ico" />
+    <None Remove="Views\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="fontawesome.sharp" Version="6.3.0" />
+    <PackageReference Include="wpfdevelopers" Version="1.1.0.2-preview" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GaloS.Wpf.Core\GaloS.Wpf.Core.csproj" />
+    <ProjectReference Include="..\Sample.WpfDevelopers.LOL\Sample.WpfDevelopers.LOL.csproj" />
+    <ProjectReference Include="..\Sample.WpfDevelopers.Mc\Sample.WpfDevelopers.Mc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="menu.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

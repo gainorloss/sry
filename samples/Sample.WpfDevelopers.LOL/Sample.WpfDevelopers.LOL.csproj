@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gs.LOL\Gs.LOL.csproj" />
+    <ProjectReference Include="..\Gs.WpfDevelopers.Shared\Gs.WpfDevelopers.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
