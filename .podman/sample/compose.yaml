@@ -8,7 +8,7 @@ x-common: &common
 version: '3'
 services:
   sample.api-dev:
-    image: sample.api:2023.09.02.2
+    image: sample.api:2023.09.03.1
     ports:
       - 7001:80
     environment: &sample-api-env
@@ -17,7 +17,7 @@ services:
       replicas: 1
     <<: *common
   sample.api:
-    image: sample.api:2023.08.26.3
+    image: sample.api:2023.09.03.1
     environment: *sample-api-env
     deploy:
       replicas: 3
@@ -25,7 +25,7 @@ services:
         order: start-first
     <<: *common
   iaas-admin-ts:
-    image: iaas-admin-ts:2023.09.03.1
+    image: iaas-admin-ts:2023.09.03.2
     ports:
       - 8080:80
     volumes:

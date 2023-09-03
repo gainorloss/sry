@@ -8,7 +8,7 @@
                {
                    var variables = Environment.GetEnvironmentVariables();
                    var map = new Dictionary<string, object>();
-                   map.Add("code", true);
+                   map.Add("code", 200);
                    map.Add("data", variables);
                    variables.Add("processor_count", Environment.ProcessorCount);
                    await ctx.Response.WriteAsJsonAsync(map);

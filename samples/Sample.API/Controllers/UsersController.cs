@@ -19,7 +19,7 @@ public class UsersController : ControllerBase
     public async Task<IDictionary<string, object>> AllAsync()
     {
         var cnn = _ctx.Database.GetDbConnection();
-        var users = await cnn.QueryAsync(@"SELECT id,real_name 
+        var users = await cnn.QueryAsync(@"SELECT *
 from uc.uc_users uu ");
 
         return new Dictionary<string, object>() {

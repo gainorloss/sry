@@ -12,7 +12,7 @@ axios.interceptors.response.use(res => {
     return res;
 });
 
-export default async function request(params: ({ url: string, method: string, data?: any })): Promise<{ code: boolean, msg?: string, data?: any }> {
+export default async function request(params: ({ url: string, method: string, data?: any })): Promise<{ code: number, msg?: string, data?: any }> {
     var para = {
         ...params,
         validateStatus: (status: number) => {
@@ -22,7 +22,7 @@ export default async function request(params: ({ url: string, method: string, da
     };
     var res = await axios(para);
     if (res.status != 200) {
-        return { code: false, msg: `网络异常，请重试` }
+        return { code: 500, msg: `网络异常，请重试` }
     }
     var data = res.data;
     return { ...data };

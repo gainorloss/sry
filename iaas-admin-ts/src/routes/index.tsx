@@ -4,6 +4,7 @@ import ErrorPage from "../ErrorPage"
 import Home from "../pages/Home"
 import Product from "../pages/pc/spu/Product";
 import Login from "../pages/Login";
+import UserList from "../pages/uc/users/UserList";
 
 const routes:RouteObject[] = [{
     element: <App />,
@@ -18,6 +19,11 @@ const routes:RouteObject[] = [{
             path: '/pc', 
             children:[
                 {path:'/pc/spu',index:true,element:<Product />,}
+            ]
+         } , { 
+            path: '/uc', 
+            children:[
+                {path:'/uc/users',index:true,element:<UserList />,}
             ]
          }
     ]

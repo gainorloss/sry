@@ -133,8 +133,8 @@ const App: React.FC = () => {
                 paddingBlockStart: 12,
               }}
             >
-              <div>© 2021 Made with love</div>
-              <div>by Ant Design</div>
+              <div>© 2023.8 Powered</div>
+              <div>by Ant Design + .NET Core</div>
             </div>
           );
         }}
