@@ -15,7 +15,7 @@ import zhCN from 'antd/locale/zh_CN';
 import { ProLayout, MenuDataItem, SettingDrawer, ProSettings, PageContainer } from '@ant-design/pro-components';
 import { menus } from './config/menus';
 const px2rem = px2remTransformer({
-  rootValue: 19, // 32px = 1rem; @default 16
+  // rootValue: 19, // 32px = 1rem; @default 16
   mediaQuery: true
 });
 
@@ -27,23 +27,23 @@ const loopMenuItem = (menus: any[]): MenuDataItem[] =>
   }));
 const App: React.FC = () => {
   const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
-    layout: 'side',
+    layout: 'mix',
   });
   const {
     token: { colorBgContainer },
   } = theme.useToken();
   const navigate = useNavigate();
   console.log(process.env);
-  
+
   return (<ConfigProvider locale={zhCN}
     theme={{
       token: {
         // Seed Token，影响范围大
         // colorPrimary: '#00b96b',
-        borderRadius: 2,
+        // borderRadius: 2,
 
         // 派生变量，影响范围小
-        colorBgContainer: '#f6ffed',
+        // colorBgContainer: '#f6ffed',
       },
     }}
   >
@@ -54,7 +54,7 @@ const App: React.FC = () => {
         location={{
           pathname: '/admin/process/edit/123',
         }}
-        layout="mix"
+        // layout="mix"
         ErrorBoundary={false}
         avatarProps={{
           src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
@@ -140,7 +140,7 @@ const App: React.FC = () => {
         }}
         {...settings}
       >
-          <Outlet />
+        <Outlet />
       </ProLayout>
       <SettingDrawer
         // pathname={pathname}
