@@ -54,6 +54,12 @@ services:
       - ./openblocks:/openblocks-stacks
     networks:
       - tools
+  metabase: # BI
+    image: metabase/metabase:latest
+    ports:
+      - 3043:3000
+    networks:
+      - tools
 networks:
   tools:
     driver: bridge
