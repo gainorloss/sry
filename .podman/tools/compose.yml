@@ -32,7 +32,7 @@ services:
   gotenberg: #pdf markdown、word、excel转化为pdf
     image: gotenberg/gotenberg:7
     ports:
-      - 13000:3000
+      - 3100:3000
     networks:
       - tools
   vnstat:
@@ -58,6 +58,14 @@ services:
     image: metabase/metabase:latest
     ports:
       - 3043:3000
+    networks:
+      - tools
+  memos:
+    image: neosmemo/memos:latest
+    volumes:
+      - ./memos/:/var/opt/memos
+    ports:
+      - 5230:5230
     networks:
       - tools
 networks:
