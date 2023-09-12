@@ -1,0 +1,61 @@
+version: '3.3'
+services:
+  server-status:
+    image: cppla/serverstatus:latest
+    container_name: server-status
+    ports:
+      - 10800:80
+      - 35601:35601
+    restart: always
+    volumes:
+      - ./server-status/config.json:/ServerStatus/server/config.json
+      # - ./serverstatus-monthtraffic:/usr/share/nginx/html/json
+    networks:
+      - server
+  domain-admin: #admin/123456
+    image: mouday/domain-admin:latest
+    ports:
+      - 8900:8000
+    networks:
+      - server
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    volumes:
+      - ./uptime-kuma:/app/data
+    ports:
+      - 10300:3001
+    restart: always
+  # db:
+  #   image: mariadb:10.8.2
+  #   container_name: spug-db
+  #   restart: always
+  #   command: --port 3306 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+  #   volumes:
+  #     - ./spug/data/mysql:/var/lib/mysql
+  #   environment:
+  #     - MYSQL_DATABASE=spug
+  #     - MYSQL_USER=spug
+  #     - MYSQL_PASSWORD=spug.cc
+  #     - MYSQL_ROOT_PASSWORD=spug.cc
+  # spug:
+  #   image: openspug/spug-service
+  #   container_name: spug
+  #   privileged: true
+  #   restart: always
+  #   volumes:
+  #     - ./spug/data/service:/data/spug
+  #     - ./spug/data/repos:/data/repos
+  #   ports:
+  #     # 如果80端口被占用可替换为其他端口，例如: - "8000:80"
+  #     - "20080:80"
+  #   environment:
+  #     - MYSQL_DATABASE=spug
+  #     - MYSQL_USER=spug
+  #     - MYSQL_PASSWORD=spug.cc
+  #     - MYSQL_HOST=db
+  #     - MYSQL_PORT=3306
+  #   depends_on:
+  #     - db
+networks:
+  server:
+    driver: bridge
