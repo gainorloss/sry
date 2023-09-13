@@ -1,0 +1,27 @@
+version: '3'
+services:
+  pi.alert: # 20211
+    image: jokobsk/pi.alert:23.5.7
+    container_name: pialert
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./pi.alert/config:/home/pi/pialert/config
+      - ./pi.alert/db:/home/pi/pialert/db
+    environment:  
+      - TZ=Asia/Shanghai  
+      - PORT=20211
+      - HOST_USER_ID=1000
+      - HOST_USER_GID=1000
+  hertzbeat: #admin/hertzbeat
+    image: tancloud/hertzbeat
+    container_name: hertzbeat
+    restart: unless-stopped
+    ports:
+      - 1157:1157
+    volumes:
+      - ./data:/opt/hertzbeat/data
+      - ./logs:/opt/hertzbeat/logs
+    environment:
+      - LANG=zh_CN.UTF-8
+      - TZ=Asia/Shanghai
